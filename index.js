@@ -1,17 +1,17 @@
-const express = require('express');
-var http = require('http');
+//const express = require('express');
+//var http = require('http');
 //const path = require('path');
 //const morgan = require('morgan');
 //const mysql = require('mysql');
 //const myConnection = require('express-myconnection');
-const app = express();
+//const app = express();
 //var ws = require('express-ws')(app); 
 
 //importando rutas
 //const customerRoutes = require('./src/ruotes/customers');
 
 //configuracion
-app.set('port', process.env.PORT || 4003);
+//app.set('port', process.env.PORT || 4003);
 /*app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './src/views'));*/
 
@@ -34,14 +34,14 @@ app.use(myConnection(mysql, {
 //app.use(express.static(path.join(__dirname, 'public')));
 
 //conexion servidor
-app.listen(app.get('port'), () => {
-    console.log('Servidor en puerto 4003')
+/*app.listen(app.get('port'), () => {
+    console.log('Servidor en puerto 4003')*/
     console.log("Iniciando broker...");
-    http.createServer(function (req, res) {
+    /*http.createServer(function (req, res) {
         res.write('<h1>Hola!</h1>');
         //res.sendStatus(200);
         res.end();        
-    });
+    });*/
      
     var mosca = require('mosca');
     var setting = {port: 443};
@@ -55,4 +55,4 @@ app.listen(app.get('port'), () => {
         message = packet.payload.toString();
         console.log(message);
     });
-});
+//});
