@@ -1,4 +1,4 @@
-/*const controller = {};
+const controller = {};
 const mysql = require('mysql');
 var http = require('http');
 var ws = require('express-ws');
@@ -25,4 +25,4 @@ controller.mimqtt = (req, res) => {
 
 
 
-module.exports = controller;*/
+module.exports = controller;
