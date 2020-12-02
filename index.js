@@ -38,7 +38,8 @@ app.listen(app.get('port'), () => {
     console.log('Servidor en puerto 4003')
     console.log("Iniciando broker...");
     http.createServer(function (req, res) {
-        res.sendStatus(200);
+        res.write('<h1>Hola!</h1>');
+        //res.sendStatus(200);
         res.end();        
     });
      
