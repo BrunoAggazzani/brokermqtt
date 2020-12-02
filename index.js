@@ -37,10 +37,10 @@ app.use(myConnection(mysql, {
 app.listen(app.get('port'), () => {
     console.log('Servidor en puerto 4003')
     console.log("Iniciando broker...");
-    /*http.createServer(function (req, res) {
+    http.createServer(function (req, res) {
         res.sendStatus(200);
         res.end();        
-    });*/
+    });
      
     var mosca = require('mosca');
     var setting = {port: 443};
