@@ -2,8 +2,8 @@ const express = require('express');
 var http = require('http');
 const path = require('path');
 const morgan = require('morgan');
-//const mysql = require('mysql');
-//const myConnection = require('express-myconnection');
+const mysql = require('mysql');
+const myConnection = require('express-myconnection');
 const app = express();
 var ws = require('express-ws')(app); 
 
@@ -20,18 +20,18 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 //middleware: connection DDBB
-/*app.use(myConnection(mysql, {
+app.use(myConnection(mysql, {
     host: 'den1.mysql4.gear.host',
     user: 'bruno',
     password: 'Batman241.',
     port: 3306
-}, 'single'));*/
+}, 'single'));
 
 //rutas
 app.use('/', customerRoutes );
 
 //static files
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //conexion servidor
 app.listen(app.get('port'), () => {
