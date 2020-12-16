@@ -4,7 +4,8 @@ const router = express.Router();
 const customerController = require('../controllers/customerController');
 
 
-router.get('/', customerController.mimqtt);
+router.get('/', customerController.inicio);
+router.post('/', customerController.mimqtt);
 
 
 module.exports = router;
